@@ -244,6 +244,55 @@ const ShopData = [
       },
     ],
   },
+  {
+    id: 6,
+    title: "Glasses",
+    routeName: "glass",
+    items: [
+      {
+        id: 1,
+        name: "White Framed Sunglasses",
+        imageUrl:
+          "https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?cs=srgb&dl=pexels-yuri-manei-2690323.jpg&fm=jpg",
+        price: 25,
+      },
+      {
+        id: 2,
+        name: " sunglasses on knitwear",
+        imageUrl:
+          "https://images.pexels.com/photos/3808229/pexels-photo-3808229.jpeg?cs=srgb&dl=pexels-dina-nasyrova-3808229.jpg&fm=jpg",
+        price: 20,
+      },
+      {
+        id: 3,
+        name: "Men Round Glass ",
+        imageUrl:
+          "https://images.pexels.com/photos/2460488/pexels-photo-2460488.jpeg?cs=srgb&dl=pexels-vadim-birsan-2460488.jpg&fm=jpg",
+        price: 15,
+      },
+      {
+        id: 4,
+        name: "The Tiny Glass",
+        imageUrl:
+          "https://images.pexels.com/photos/3718045/pexels-photo-3718045.jpeg?cs=srgb&dl=pexels-caroline-ayumi-fugitani-3718045.jpg&fm=jpg",
+        price: 20,
+      },
+      {
+        id: 5,
+        name: "Full Frame",
+        imageUrl:
+          "https://images.pexels.com/photos/3256033/pexels-photo-3256033.jpeg?cs=srgb&dl=pexels-brett-sayles-3256033.jpg&fm=jpg",
+        price: 33,
+      },
+      {
+        id: 6,
+        name: "Computer Glass",
+        imageUrl:
+          "https://images.pexels.com/photos/5691272/pexels-photo-5691272.jpeg?cs=srgb&dl=pexels-keenan-constance-5691272.jpg&fm=jpg",
+        price: 16,
+      },
+    ],
+  },
 ];
 
 export default ShopData;
