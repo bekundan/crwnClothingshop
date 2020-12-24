@@ -5,11 +5,13 @@ import Homepage from "./pages/homepage/homepage.component";
 import { Switch, Route } from "react-router-dom";
 //import the shop data
 import ShopPage from "./pages/shop/shop.components";
-
+//import the Header page
+import Header from "./components/header/header.componetn";
 function App() {
   return (
     <div>
       {/* //here we use the Switch to use Route */}
+      <Header />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/shop" component={ShopPage} />
