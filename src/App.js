@@ -7,6 +7,8 @@ import { Switch, Route } from "react-router-dom";
 import ShopPage from "./pages/shop/shop.components";
 //import the Header page
 import Header from "./components/header/header.componetn";
+//here we import the signIn and the SignUp
+import SignInandSignUpPage from "./pages/signIn&signUp/sign-in-and-sign-up";
 function App() {
   return (
     <div>
@@ -15,6 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/shop" component={ShopPage} />
+        <Route path="/signin" component={SignInandSignUpPage} />
       </Switch>
     </div>
   );
