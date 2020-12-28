@@ -9,7 +9,7 @@ import ShopPage from "./pages/shop/shop.components";
 import Header from "./components/header/header.componetn";
 //here we import the signIn and the SignUp
 import SignInandSignUpPage from "./pages/signIn&signUp/sign-in-and-sign-up";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 class App extends React.Component {
   constructor() {
     super();
@@ -20,9 +20,19 @@ class App extends React.Component {
   //for the user after signup to show on the web
   unsubscribeFromAuth = null;
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      this.setState({ currentUser: user });
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot((snapShot) => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
+            },
+          });
+        });
+      }
+      this.setState({ currentUser: userAuth });
     });
   }
   componentWillUnmount() {
