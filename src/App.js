@@ -10,8 +10,11 @@ import Header from "./components/header/header.componetn";
 //here we import the signIn and the SignUp
 import SignInandSignUpPage from "./pages/signIn&signUp/sign-in-and-sign-up";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+//the redux part
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import { setCurrentUser } from "./redux/user/user.action";
+import { selectCurrentUser } from "./redux/user/user.selector";
 
 class App extends React.Component {
   //for the user after signup to show on the web and store as current user
@@ -59,8 +62,8 @@ class App extends React.Component {
     );
   }
 }
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
