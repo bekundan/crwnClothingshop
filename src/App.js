@@ -6,7 +6,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 //import the shop data
 import ShopPage from "./pages/shop/shop.components";
 //import the Header page
-import Header from "./components/header/header.componetn";
+import Header from "./components/header/header.component";
 //here we import the signIn and the SignUp
 import SignInandSignUpPage from "./pages/signIn&signUp/sign-in-and-sign-up";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
@@ -16,7 +16,7 @@ import { createStructuredSelector } from "reselect";
 import { setCurrentUser } from "./redux/user/user.action";
 import { selectCurrentUser } from "./redux/user/user.selector";
 //the checkout  page *******
-import CheckOutPage from "./pages/checkout/checkout.componetnt";
+import CheckOutPage from "./pages/checkout/checkout.component";
 
 class App extends React.Component {
   //for the user after signup to show on the web and store as current user

@@ -1,7 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import "./header.componetnts.style.scss";
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionDiv,
+  OptionLink,
+} from "./header.style";
 //import logo
 import { ReactComponent as Logo } from "../../assets/online-shop.svg";
 //import auth for the user if signIn then show signOut Button on the NavBar
@@ -15,30 +20,22 @@ import { selectCartHidden } from "../../redux/cart/cart.selector";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 
 const Header = ({ currentUser, hidden }) => (
-  <div className="header">
-    <Link to="/" className="logo-container">
+  <HeaderContainer>
+    <LogoContainer to="/">
       <Logo className="logo" />
-    </Link>
-    <div className="options">
-      <Link className="option" to="/shop">
-        SHOP
-      </Link>
-      <Link className="option" to="/shop">
-        CONTACT
-      </Link>
+    </LogoContainer>
+    <OptionsContainer>
+      <OptionLink to="/shop">SHOP</OptionLink>
+      <OptionLink to="/shop">CONTACT</OptionLink>
       {currentUser ? (
-        <div className="option" onClick={() => auth.signOut()}>
-          SIGNOUT
-        </div>
+        <OptionDiv onClick={() => auth.signOut()}>SIGNOUT</OptionDiv>
       ) : (
-        <Link className="option" to="/signin">
-          SIGNIN
-        </Link>
+        <OptionLink to="/signin">SIGNIN</OptionLink>
       )}
       <CartIcon />
-    </div>
+    </OptionsContainer>
     {hidden ? null : <CartDropdown />}
-  </div>
+  </HeaderContainer>
 );
 
 //we got the state value in const
