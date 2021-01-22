@@ -19,7 +19,7 @@ const config = {
 //there we store the user data in firebase storage
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
-  const userRef = firestone.doc(`users/${userAuth.uid}`);
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
@@ -39,9 +39,20 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 firebase.initializeApp(config);
+//moving shop data to firebase
+export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+
+  const batch = firestore.batch();
+  objectToAdd.forEach((obj) => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+  return await batch.commit();
+};
 
 export const auth = firebase.auth();
-export const firestone = firebase.firestore();
+export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });

@@ -35,6 +35,11 @@ class App extends React.Component {
         });
       }
       setCurrentUser(userAuth);
+      //here we set the method to add collection to firestore
+      // addCollectionAndDocuments(
+      //   "collection",
+      //   collectionsArray.map(({ title, items }) => ({ title, items }))
+      // );
     });
   }
   componentWillUnmount() {
