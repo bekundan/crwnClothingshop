@@ -12,7 +12,7 @@ const INTIAL_STATE = {
       imageUrl:
         "https://images.pexels.com/photos/1457983/pexels-photo-1457983.jpeg?cs=srgb&dl=pexels-jack-winbow-1457983.jpg&fm=jpg",
       id: 2,
-      linkUrl: "shop/jacket",
+      linkUrl: "shop/jackets",
     },
     {
       title: "Sneaker",
@@ -26,7 +26,7 @@ const INTIAL_STATE = {
       imageUrl:
         "https://images.pexels.com/photos/2460488/pexels-photo-2460488.jpeg?cs=srgb&dl=pexels-vadim-birsan-2460488.jpg&fm=jpg",
       id: 5,
-      linkUrl: "shop/men",
+      linkUrl: "shop/mens",
       size: "large",
     },
     {
@@ -35,14 +35,14 @@ const INTIAL_STATE = {
         "https://images.pexels.com/photos/1649648/pexels-photo-1649648.jpeg?cs=srgb&dl=pexels-davide-de-giovanni-1649648.jpg&fm=jpg",
       id: 6,
       size: "large",
-      linkUrl: "shop/women",
+      linkUrl: "shop/womens",
     },
     {
       title: "Glasses",
       imageUrl:
         "https://images.pexels.com/photos/4085856/pexels-photo-4085856.jpeg?cs=srgb&dl=pexels-uncoveredlens-4085856.jpg&fm=jpg",
       id: 7,
-      linkUrl: "shop/glass",
+      linkUrl: "shop/glasses",
     },
   ],
 };

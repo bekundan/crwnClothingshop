@@ -48,12 +48,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* //here we use the Switch to use Route */}
-        <Header />
+        {" "}
+        {/* //here we use the Switch to use Route */} <Header />
         <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route exact path="/checkout" component={CheckOutPage} />
+          <Route exact path="/" component={Homepage} />{" "}
+          <Route path="/shop" component={ShopPage} />{" "}
+          <Route exact path="/checkout" component={CheckOutPage} />{" "}
           <Route
             exact
             path="/signin"
@@ -64,8 +64,8 @@ class App extends React.Component {
                 <SignInandSignUpPage />
               )
             }
-          />
-        </Switch>
+          />{" "}
+        </Switch>{" "}
       </div>
     );
   }
