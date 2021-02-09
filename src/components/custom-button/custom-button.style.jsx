@@ -37,7 +37,7 @@ const getButtonStyles = (props) => {
   return props.inverted ? invertedButtonStyle : ButtonStyle;
 };
 
-export const CustomButtonContainer = styled.div`
+export const CustomButtonContainer = styled.button`
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
