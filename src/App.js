@@ -13,6 +13,7 @@ import SignInandSignUpPage from "./pages/signIn&signUp/sign-in-and-sign-up";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selector";
+import { checkUserSession } from "./redux/user/user.action";
 //the checkout  page *******
 import CheckOutPage from "./pages/checkout/checkout.component";
 
@@ -20,23 +21,8 @@ class App extends React.Component {
   //for the user after signup to show on the web and store as current user
   unsubscribeFromAuth = null;
   componentDidMount() {
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-    //     userRef.onSnapshot((snapShot) => {
-    //       setCurrentUser({
-    //         id: snapShot.id,
-    //         ...snapShot.data(),
-    //       });
-    //     });
-    //   }
-    //   setCurrentUser(userAuth);
-    //here we set the method to add collection to firestore
-    // addCollectionAndDocuments(
-    //   "collection",
-    //   collectionsArray.map(({ title, items }) => ({ title, items }))
-    // );
-    // });
+    const { checkUserSession } = this.props;
+    checkUserSession();
   }
   componentWillUnmount() {
     this.unsubscribeFromAuth();
@@ -44,13 +30,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {" "}
-        {/* //here we use the Switch to use Route */}
         <Header />
         <Switch>
-          <Route exact path="/" component={Homepage} />{" "}
-          <Route path="/shop" component={ShopPage} />{" "}
-          <Route exact path="/checkout" component={CheckOutPage} />{" "}
+          <Route exact path="/" component={Homepage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route exact path="/checkout" component={CheckOutPage} />
           <Route
             exact
             path="/signin"
@@ -61,8 +45,8 @@ class App extends React.Component {
                 <SignInandSignUpPage />
               )
             }
-          />{" "}
-        </Switch>{" "}
+          />
+        </Switch>
       </div>
     );
   }
@@ -70,5 +54,8 @@ class App extends React.Component {
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
+const mapDispatchToProps = (dispatch) => ({
+  checkUserSession: () => dispatch(checkUserSession()),
+});
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
