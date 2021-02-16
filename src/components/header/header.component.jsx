@@ -9,8 +9,6 @@ import {
 } from "./header.style";
 //import logo
 import { ReactComponent as Logo } from "../../assets/online-shop.svg";
-//import auth for the user if signIn then show signOut Button on the NavBar
-import { auth } from "../../firebase/firebase.utils";
 import { signOutStart } from "../../redux/user/user.action";
 ///import cart
 import CartIcon from "../cart-icon/cart-icon.component";
